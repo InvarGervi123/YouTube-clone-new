@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import tus from 'tus-js-client'
+import * as tus from 'tus-js-client'
 import { supabase, getProjectIdFromUrl } from '@/lib/supabaseClient'
 import { sanitizeFilename } from '@/lib/storage'
 import { useUser } from '@/lib/useUser'
