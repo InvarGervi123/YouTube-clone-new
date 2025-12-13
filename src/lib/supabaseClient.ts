@@ -16,8 +16,10 @@ export const supabase = createClient(url, key, {
   }
 })
 
-export function getProjectIdFromUrl() {
-  // https://<projectId>.supabase.co
+export function getProjectIdFromUrl(u?: string) {
+  const url = u ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
+  if (!url) return ''
   const host = new URL(url).hostname
   return host.split('.')[0]
 }
+

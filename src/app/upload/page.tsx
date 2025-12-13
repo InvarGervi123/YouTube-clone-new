@@ -21,6 +21,7 @@ export default function UploadPage() {
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
+
   useEffect(() => {
     if (!loading && !user) router.replace('/login')
     if (!loading && profile?.banned) router.replace('/')
@@ -51,6 +52,12 @@ export default function UploadPage() {
     }
 
     const projectId = getProjectIdFromUrl()
+    if (!projectId) {
+      setBusy(false)
+      setError('Missing NEXT_PUBLIC_SUPABASE_URL (check Vercel env vars).')
+      return
+    }
+
 
     await new Promise<void>((resolve, reject) => {
       const upload = new tus.Upload(file, {
