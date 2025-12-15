@@ -11,7 +11,7 @@ export default function Navbar() {
     <div className="card" style={{ marginBottom: 14 }}>
       <div className="row">
         <Link href="/" style={{ fontWeight: 900, letterSpacing: 0.2 }}>
-          MiniTube
+          YamShamenTube
         </Link>
         <span className="badge">Next.js + Supabase</span>
         <div className="spacer" />
