@@ -2,7 +2,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 
 export const metadata = {
-  title: 'YamShamenTube',
+  title: 'miniTube',
   description: 'A small YouTube-style clone (Next.js + Supabase)'
 }
 
